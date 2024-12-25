@@ -1,3 +1,9 @@
+https://github.com/ciellleen/1225/blob/main/%EC%97%AD%EC%9C%BC%EB%A1%9C%20%EB%82%98%ED%83%80%EB%82%B4%EA%B8%B0
+
+[+ 추가 공부 1(정수를 뒤집는 4가지 방법)](https://www.notion.so/1-4-167606e044e780e182ffe31b44305c02?pvs=21)
+
+[+ 추가 공부 2(문자열을 역순으로 출력하기)](https://www.notion.so/2-167606e044e78060a3efc29f13a529f3?pvs=21)
+
 # 문제
 
 ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/43f4c680-a7ab-4f2d-b233-d37ec40472ce/8a638a6a-35c9-4460-9c3d-f64d322301db/image.png)
@@ -10,14 +16,12 @@
 
 int reverse(int n) 
 {
-   // log로 자리수 구하기
-   int digits = (int)log10(n);  // n의 자릿수 - 1을 구함
+   int digits = (int)log10(n);  
    
-   // 뒤집기(가장 뒷자리부터 최대 자리수 거듭제곱을 곱하기)
    int result = 0;
    while(n > 0) 
    {
-       result += (n % 10) * (int)pow(10, digits--);  // 10의 거듭제곱을 직접 계산
+       result += (n % 10) * (int)pow(10, digits--);  
        n /= 10;
    }
    return result;
@@ -150,3 +154,19 @@ n /= 10;
 - while 루프는 숫자의 각 자리를 분리하여 뒤집어 result에 추가.
 - digits--는 자릿수를 감소시키면서 10의 거듭 제곱을 맞추고, 자릿수를 뒤집기.
 - n /= 10으로 숫자의 각 자리를 제거하며, 루프가 끝날 때까지 계속하기.
+
+# digit랑 pow
+
+### digit
+
+- 특정 숫자 n의 자릿수(숫자에 몇 자리가 있는지)를 나타내는 변수.
+
+### pow
+
+- 수학 함수로, **거듭 제곱**을 계산하는 함수.
+- 즉, 주어진 숫자를 특정 제곱으로 계산함.
+
+### 이 코드에서의 역할:
+
+- digits는 숫자의 자릿수를 추적하기 위한 변수로, log10(n)을 통해 계산.
+- pow는 거듭 제곱을 계산하는 함수로, 주로 숫자의 자리 위치를 결정하는 데 사용.
